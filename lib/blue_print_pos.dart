@@ -230,14 +230,14 @@ class BluePrintPos {
     int size = 120,
     int feedCount = 0,
     bool useCut = false,
+    PaperSize paperSize = PaperSize.mm58,
   }) async {
     final List<int> byteBuffer = await _getQRImage(data, size.toDouble());
-    printReceiptImage(
-      byteBuffer,
-      width: size,
-      feedCount: feedCount,
-      useCut: useCut,
-    );
+    printReceiptImage(byteBuffer,
+        width: size,
+        feedCount: feedCount,
+        useCut: useCut,
+        paperSize: paperSize);
   }
 
   /// Reusable method for print text, image or QR based value [byteBuffer]
